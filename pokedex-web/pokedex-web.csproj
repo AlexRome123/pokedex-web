@@ -71,6 +71,7 @@
     <Content Include="DetallePoke.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListaPoke.aspx" />
+    <Content Include="Repeater.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +107,13 @@
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repeater.aspx.cs">
+      <DependentUpon>Repeater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repeater.aspx.designer.cs">
+      <DependentUpon>Repeater.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />

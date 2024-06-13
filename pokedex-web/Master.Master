@@ -26,6 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="ListaPoke.aspx">Lista Pokemon</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Repeater.aspx">Listar con Repeater</a>
+                        </li>
                     </ul>
                 </div>
             </div>
