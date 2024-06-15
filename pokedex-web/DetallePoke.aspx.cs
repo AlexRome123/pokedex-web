@@ -11,9 +11,11 @@ namespace pokedex_web
 {
     public partial class DetallePoke : System.Web.UI.Page
     {
+        public bool ConfirmarElimin {  get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             txtId.Enabled = false;
+            ConfirmarElimin = false;
             try
             {
                 //si el pokemon es nuevo
@@ -40,6 +42,9 @@ namespace pokedex_web
                     //Pokemon seleccionado = lista[0];
                     Pokemon seleccionado = negocio.listar(id)[0];
 
+                    //guardo pokemon seleccionado en session
+                    Session.Add("seleccionado",seleccionado);
+
                     txtId.Text = id;
                     //se hace todo texto plano por que es lo que lee el navegador
                     txtNumero.Text = seleccionado.Numero.ToString();
@@ -50,6 +55,11 @@ namespace pokedex_web
                     dpTipo.SelectedValue = seleccionado.Tipo.Id.ToString();
                     UrlImagen_TextChanged(sender, e);
 
+                    //configurar acciones
+                    if(!seleccionado.Activo)
+                    {
+                        btnInactivar.Text = "Activar";
+                    }
                 }
 
 
@@ -57,7 +67,6 @@ namespace pokedex_web
             catch (Exception ex)
             {
                 Session.Add("error", ex);
-                throw;
             }
         }
 
@@ -96,6 +105,43 @@ namespace pokedex_web
         protected void UrlImagen_TextChanged(object sender, EventArgs e)
         {
             ImagePoke.ImageUrl = txtUrlImagen.Text;
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ConfirmarElimin = true;
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(chkConfirmaElimin.Checked)
+                {
+                    PokemonNegocio negocio = new PokemonNegocio();
+                    negocio.eliminar(int.Parse(txtId.Text));
+                    Response.Redirect("listaPoke.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+            }
+        }
+
+        protected void btnInactivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PokemonNegocio negocio = new PokemonNegocio();
+                Pokemon seleccionado = (Pokemon)Session["seleccionado"];
+                negocio.eliminarLogico(seleccionado.Id,seleccionado.Activo);              
+                Response.Redirect("ListaPoke.aspx");
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error",ex);
+            }
         }
     }
 }
