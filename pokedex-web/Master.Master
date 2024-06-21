@@ -29,6 +29,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="Repeater.aspx">Listar con Repeater</a>
                         </li>
+                        <%dominio.Usuario user = (dominio.Usuario)Session["usuario"];
+                            if (user == null)
+                            {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Login.aspx">Ingresar</a>
+                        </li>
+                        <% }
+                            else
+                            {%>
+                        <li class="nav-item">
+                            <asp:Button CssClass="nav-link" ID="btnSalir" OnClick="btnSalir_Click" Text="Salir" runat="server" />
+                        </li>
+                        <% } %>
+
                     </ul>
                 </div>
             </div>
