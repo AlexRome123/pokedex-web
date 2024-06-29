@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%:poke.Nombre %></h5>
                         <p class="card-text"><%:poke.Descripcion %></p>
-                        <a href="DetallePoke.aspx?id=<%:poke.Id %>">Ver detalle</a>
+                        <a class="btn btn-primary" href="DetallePoke.aspx?id=<%:poke.Id %>">Ver detalle</a>
                     </div>
                 </div>
             </div>

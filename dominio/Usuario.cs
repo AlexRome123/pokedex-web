@@ -26,8 +26,6 @@ namespace dominio
             else
                 return false;
         }
-        
-        
-        //if (Session["usuario"]!=null && ((dominio.Usuario) Session["usuario"]).TipoUsuario == dominio.TipoUsuario.ADMIN )
+      
     }
 }

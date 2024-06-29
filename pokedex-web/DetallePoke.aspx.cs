@@ -14,6 +14,7 @@ namespace pokedex_web
         public bool ConfirmarElimin {  get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             txtId.Enabled = false;
             ConfirmarElimin = false;
             try

@@ -62,6 +62,20 @@ namespace negocio
                 throw ex;
             }
         }
+        public int ejecutarAccionScalar()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                return (int)comando.ExecuteScalar();
+                //para que devuelva un valor en este caso un entero
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public void setearParametro(string nombre, object valor)
         {

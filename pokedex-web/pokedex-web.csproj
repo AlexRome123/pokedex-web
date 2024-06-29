@@ -69,12 +69,14 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="DetallePoke.aspx" />
+    <Content Include="EnviosEmail\EnvioMail.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="Favoritos.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListaPoke.aspx" />
-    <Content Include="Login.aspx" />
-    <Content Include="MenuLoginEjemplo.aspx" />
-    <Content Include="paginaAdmin.aspx" />
+    <Content Include="Login2.aspx" />
+    <Content Include="MiPerfil.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Repeater.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,12 +95,26 @@
     <Compile Include="DetallePoke.aspx.designer.cs">
       <DependentUpon>DetallePoke.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EnviosEmail\EnvioMail.aspx.cs">
+      <DependentUpon>EnvioMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnviosEmail\EnvioMail.aspx.designer.cs">
+      <DependentUpon>EnvioMail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Favoritos.aspx.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Favoritos.aspx.designer.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -110,12 +126,12 @@
     <Compile Include="ListaPoke.aspx.designer.cs">
       <DependentUpon>ListaPoke.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Login2.aspx.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Login2.aspx.designer.cs">
+      <DependentUpon>Login2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
@@ -124,21 +140,21 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
-    <Compile Include="MenuLoginEjemplo.aspx.cs">
-      <DependentUpon>MenuLoginEjemplo.aspx</DependentUpon>
+    <Compile Include="MiPerfil.aspx.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MenuLoginEjemplo.aspx.designer.cs">
-      <DependentUpon>MenuLoginEjemplo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="paginaAdmin.aspx.cs">
-      <DependentUpon>paginaAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="paginaAdmin.aspx.designer.cs">
-      <DependentUpon>paginaAdmin.aspx</DependentUpon>
+    <Compile Include="MiPerfil.aspx.designer.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Repeater.aspx.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

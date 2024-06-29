@@ -11,7 +11,7 @@ namespace pokedex_web
 {
 
 
-    public partial class paginaAdmin
+    public partial class Favoritos
     {
     }
 }
