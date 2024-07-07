@@ -35,8 +35,18 @@
                     </ul>
                 </div>
                 <div>
-                    <a class="btn btn-success" href="Login2.aspx">Login</a>
-                    <a class="btn btn-outline-primary" href="Registro.aspx">Registrarse</a>
+                    <%
+                        if (negocio.Seguridad.SesionActiva(Session["sessionActiva"]))
+                        {%>
+                            <a class="btn btn-success" href="Login2.aspx">Login</a>
+                            <a class="btn btn-outline-primary" href="Registro.aspx">Registrarse</a>
+                      <%}
+                        else
+                        {%>
+                        <asp:Button class="btn btn-outline-primary" Text="Salir" id="btnSalir" OnClick="btnSalir_Click" runat="server" />
+                        <asp:Label Text="text" ID="lblUsuario" runat="server" />
+                      <%}%>
+                      <asp:Image runat="server" style="height:40px;width:40px; border-radius:50%;" id="imgAvatar"/>
                 </div>
         </nav>
         <div class="container">
