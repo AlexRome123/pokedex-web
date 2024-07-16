@@ -25,6 +25,7 @@ namespace pokedex_web
                 EmailService Service = new EmailService();
                 user.Email = txtEmail.Text;
                 user.Pass = txtContraseña.Text;
+                //user.FechaNacimiento = DateTime.Parse("1800-01-01");
                 user.Id = negocio.insertarNuevo(user);
                 Session.Add("sessionActiva", user);
 
@@ -35,6 +36,7 @@ namespace pokedex_web
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
     }

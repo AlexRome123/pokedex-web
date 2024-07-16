@@ -19,8 +19,8 @@ namespace negocio
                 datos.setearParametro("@Nombre", user.Nombre);
                 datos.setearParametro("@Apellido", user.Apellido);
                 datos.setearParametro("@fechaNacimiento", user.FechaNacimiento);
-                //si imagen perfil es distinto de nulo entonces masndar user perfil sino mandar vacio
-                datos.setearParametro("@imagenPerfil", user.ImagenPerfil != null ? user.ImagenPerfil : "");
+                //si imagen perfil es distinto de nulo entonces masndar user perfil sino mandar nulo casteado a object
+                datos.setearParametro("@imagenPerfil", user.ImagenPerfil != null ? user.ImagenPerfil : (object)DBNull.Value);
                 datos.setearParametro("@Id", user.Id);
                 datos.ejecutarAccion();
             }
@@ -42,6 +42,7 @@ namespace negocio
                 datos.SetearProcedimiento("InsertarNuevo");
                 datos.setearParametro("@Email",nuevo.Email);
                 datos.setearParametro("@Pass",nuevo.Pass);
+
                 return datos.ejecutarAccionScalar();
             }
             catch (Exception ex)

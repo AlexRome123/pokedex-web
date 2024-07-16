@@ -62,12 +62,11 @@ namespace pokedex_web
                         btnInactivar.Text = "Activar";
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex);
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -98,8 +97,8 @@ namespace pokedex_web
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex);
-                throw;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -126,7 +125,8 @@ namespace pokedex_web
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex);
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -141,7 +141,8 @@ namespace pokedex_web
             }
             catch (Exception ex)
             {
-                Session.Add("error",ex);
+                Session.Add("error",ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
     }

@@ -162,6 +162,7 @@
     <Compile Include="Repeater.aspx.designer.cs">
       <DependentUpon>Repeater.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />

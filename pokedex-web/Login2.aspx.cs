@@ -22,20 +22,26 @@ namespace pokedex_web
             TraineeNegocio negocio = new TraineeNegocio();
             try
             {
+                if (Validacion.ValidaTxtVacio(txtContraseña) || Validacion.ValidaTxtVacio(txtEmail))
+                {
+                    Session.Add("error", "Debes completar ambos campos");
+                    //var a generar un thread abort exepcion pero lo capturno en el catch y no hago nada...
+                    Response.Redirect("Error.aspx");
+                }
                 aprendiz.Email = txtEmail.Text;
                 aprendiz.Pass = txtContraseña.Text;
                 if (negocio.Login(aprendiz))
                 {
                     Session.Add("sessionActiva", aprendiz);
-                    Response.Redirect("MiPerfil.aspx", false);
-                    
+                    Response.Redirect("MiPerfil.aspx", false);                   
                 }
                 else
                 {
                     Session.Add("error", "User o pass incorrectos");
-                    Response.Redirect("Error.aspx");
+                    Response.Redirect("Error.aspx",false);
                 }
             }
+            catch (System.Threading.ThreadAbortException ex) { }
             catch (Exception ex)
             {
                 Session.Add("error",ex.ToString());
